@@ -26,7 +26,11 @@ bool SessionAgregator::sessionDead(std::string uuidForSession) {
             return false;
         }
     } else {
+<<<<<<< HEAD
         // если сессии совсем нет в мапе, значит она не создавалась или итсекла
+=======
+        // если сессии совсем нет в мапе, значит она не создавалась или ее срок действия истек
+>>>>>>> feature/variant_10_svyatoslav
         return true;
     }
 }
@@ -35,8 +39,7 @@ void SessionAgregator::updateSessionTime(const std::string &uuidForSession, Sess
     // обновляем сессию, т.к. поступил новый запрос
     thisSession.creationTime = getCurrentTime();
     // кладём обновлённое значение в мапу
-    // кладём обновлённое значение в мапу
-    // кладём обновлённое значение в мапу
+	// кладём обновлённое значение в мапу
     currentConnections.erase(uuidForSession);
     currentConnections[uuidForSession] = thisSession;
 }
